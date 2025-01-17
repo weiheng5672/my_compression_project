@@ -25,26 +25,17 @@ pip install pillow
 ```
 （`zipfile` 和 `os` 是 Python 標準庫，無需安裝。）
 
-### 3. **初始化專案**
-建立專案目錄：
-```bash
-mkdir my_compression_project
-cd my_compression_project
+
+### 3.匯出專案的 `environment.yml` 檔案
+完成環境的配置後，可以用以下命令導出環境
+```
+conda env export --name 專案環境名稱 > environment.yml
 ```
 
-在此目錄下新建 Python 文件，比如 `compressor.py`，並在文件中編寫壓縮腳本。
+## 在其他台電腦下載之後
 
-### 4. **批量壓縮腳本**
-
-
-### 5. **運行腳本**
-將圖片放到 `input_images` 文件夾下，然後運行腳本：
-```bash
-python compressor.py
+### 根據 `environment.yml` 的設定創建環境
 ```
-
-### 6. **進一步優化**
-如果你的壓縮需求更複雜（例如支持多線程、多格式），可以考慮：
-- 使用 `concurrent.futures` 提高效率。
-- 將壓縮功能封裝成模塊，便於重複使用。
+conda env create -f environment.yml
+```
 
