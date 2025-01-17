@@ -34,41 +34,8 @@ cd my_compression_project
 
 在此目錄下新建 Python 文件，比如 `compressor.py`，並在文件中編寫壓縮腳本。
 
-### 4. **批量壓縮腳本示例**
-以下是一個簡單的 Python 腳本示例，實現批量壓縮目錄中的圖片文件：
+### 4. **批量壓縮腳本**
 
-```python
-import os
-from PIL import Image
-import zipfile
-
-def compress_images(input_dir, output_dir, zip_name, quality=85):
-    # 確保輸出目錄存在
-    os.makedirs(output_dir, exist_ok=True)
-
-    # 創建壓縮包
-    with zipfile.ZipFile(zip_name, 'w') as zipf:
-        for root, _, files in os.walk(input_dir):
-            for file in files:
-                if file.lower().endswith(('png', 'jpg', 'jpeg')):
-                    input_path = os.path.join(root, file)
-                    output_path = os.path.join(output_dir, file)
-
-                    # 壓縮圖片
-                    img = Image.open(input_path)
-                    img.save(output_path, quality=quality, optimize=True)
-
-                    # 添加到壓縮包
-                    zipf.write(output_path, os.path.relpath(output_path, output_dir))
-
-if __name__ == "__main__":
-    input_directory = "input_images"  # 原始圖片文件夾
-    output_directory = "compressed_images"  # 壓縮後的文件夾
-    zip_file_name = "compressed_images.zip"  # 壓縮包名稱
-
-    compress_images(input_directory, output_directory, zip_file_name)
-    print("批量壓縮完成！")
-```
 
 ### 5. **運行腳本**
 將圖片放到 `input_images` 文件夾下，然後運行腳本：
