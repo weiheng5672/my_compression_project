@@ -1,4 +1,4 @@
-以下是建立新的 Conda 環境並用來進行批量壓縮的步驟：
+## 以下是建立新的 Conda 環境的步驟：
 
 ### 1. **建立新的 Conda 環境**
 在終端輸入以下命令以創建一個新的 Conda 環境：
@@ -29,7 +29,7 @@ pip install pillow
 ### 3.匯出專案的 `environment.yml` 檔案
 完成環境的配置後，可以用以下命令導出環境
 ```
-conda env export --name 專案環境名稱 > environment.yml
+conda env export --name my_compression_env > environment.yml
 ```
 
 ## 在其他台電腦下載之後
