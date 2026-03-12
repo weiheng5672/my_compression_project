@@ -1,7 +1,7 @@
 import os
 import zipfile
 
-comic_folder = r"C:\Users\weiheng\Desktop\comic"
+comic_folder = r"D:\Users\Desktop\Download"
 
 def compress_subfolders_in_comic(comic_folder):
     """
@@ -33,7 +33,7 @@ def compress_subfolders_in_comic(comic_folder):
             print(f"子資料夾 {subfolder_name} 壓縮完成，已保存為 {output_zip}")
 
 if __name__ == "__main__":
-    comic_folder = r"C:\Users\weiheng\Desktop\comic"
+    comic_folder = r"D:\Users\Desktop\Download"
     
     if os.path.exists(comic_folder):
         compress_subfolders_in_comic(comic_folder)
